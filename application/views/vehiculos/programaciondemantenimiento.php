@@ -100,9 +100,9 @@ if ($query->num_rows() > 0) {
     echo ' Importe de Solicitudes: <strong> ' . money_format('%= (#6.2n', $costo_semana) . '</strong> <br>';
     echo ' Trasnferencia a Proveedor:<strong> ' . money_format('%= (#6.2n', $costo_transferencia) . '</strong><br>';
     echo ' Trasnferencia a Usuario: <strong> ' . money_format('%= (#6.2n', $costo_transferencia_usuario) . '</strong><br>';
-    echo ' Subtotal a Solicitar EdenRed: <strong> ' . money_format('%= (#6.2n', $costo_edenred) . '</strong><br>';
+    echo ' Total a Solicitar EdenRed: <strong> ' . money_format('%= (#6.2n', $costo_edenred) . '</strong><br>';
     echo ' Importe EdenRed no ejecutado: <strong> ' . money_format('%= (#6.2n', $edenrednegativo) . '</strong><br>';
-    echo ' Total a Solicitar EdenRed: <strong> ' . money_format('%= (#6.2n', $balanceedenred) . '</strong> <br>';
+  //  echo ' Total a Solicitar EdenRed: <strong> ' . money_format('%= (#6.2n', $balanceedenred) . '</strong> <br>';
     //   echo '</dl>';
     echo '<button type="submit" class="btn btn-info">Autorizar servicios</button></form>';
 //    echo 'El importe de solicitudes sin autorizar es: '.money_format('%= (#6.2n', $costo_semana);

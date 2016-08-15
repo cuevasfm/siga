@@ -3,7 +3,7 @@
 </div>
 
 <?php
-$query = $this->db->query('select idservicio_vehicular, placas, fecha_solicitud, estatus_autorizacion, costo_neto, observaciones, mediode_pago, modelo, usuario, nombre, ap_paterno, ap_materno, email from servicio_vehicular join vehiculos on servicio_vehicular.idvehiculo = vehiculos.idvehiculo join usuarios on   vehiculos.usuario_actual = usuarios.id where idsolicitante = ' . $_SESSION['id']);
+$query = $this->db->query('select idservicio_vehicular, placas, fecha_solicitud, estatus_autorizacion, costo_neto, observaciones, mediode_pago, modelo, usuario, nombre, ap_paterno, ap_materno, email from servicio_vehicular join vehiculos on servicio_vehicular.idvehiculo = vehiculos.idvehiculo join usuarios on   vehiculos.usuario_actual = usuarios.id where idsolicitante = ' . $_SESSION['id'] . ' ORDER BY idservicio_vehicular DESC ');
 
 if ($query->num_rows() > 0) {
     echo '<table class="table table-hover" style="font-size: 12px">
@@ -33,11 +33,11 @@ if ($query->num_rows() > 0) {
         echo '<td>' . $row->email . '</td>';
         if ($row->mediode_pago == 1) {
             $mediodepago = 'EdenRed';
-        }elseif ($row->mediode_pago == 2) {
+        } elseif ($row->mediode_pago == 2) {
             $mediodepago = 'Trasnferencia Proveedor';
-        }elseif ($row->mediode_pago == 3) {
+        } elseif ($row->mediode_pago == 3) {
             $mediodepago = 'Trasnferencia Usuario';
-        }else{
+        } else {
             $mediodepago = 'No especificado';
         }
         echo '<td>' . $mediodepago . '</td>';

@@ -106,9 +106,9 @@ if ($query->num_rows() > 0) {
             <th class="text-center" style="width: 17%; background-color: gray !important; color: white !important; font-size: 12px;">IMPORTE DE SOLICITUDES:</th>
             <th class="text-center" style="width: 16%; background-color: gray !important; color: white !important; font-size: 12px;">TRANSFERENCIA A PROVEEDOR</th>
             <th class="text-center" style="width: 17%; background-color: gray !important; color: white !important; font-size: 12px;">TRANSFERENCIA A USUARIO:</th>
-            <th class="text-center" style="width: 16%; background-color: gray !important; color: white !important; font-size: 12px;">SUBTOTAL A SOLICITAR EDENRED</th>
+            <th class="text-center" style="width: 16%; background-color: gray !important; color: white !important; font-size: 12px;">TOTAL A SOLICITAR EDENRED</th>
             <th class="text-center" style="width: 17%; background-color: gray !important; color: white !important; font-size: 12px;">IMPORTE EDENRED NO EJECUTADO </th>
-            <th class="text-center" style="width: 17%; background-color: gray !important; color: white !important; font-size: 12px;">TOTAL A SOLICITAR EDENRED</th>
+<!--            <th class="text-center" style="width: 17%; background-color: gray !important; color: white !important; font-size: 12px;">TOTAL A SOLICITAR EDENRED</th>-->
         </tr>
         <tr>
             <td class="text-center" style="font-size: 14px;"><?php echo money_format('%= (#6.2n', $costo_semana); ?></td>
@@ -116,7 +116,7 @@ if ($query->num_rows() > 0) {
             <td class="text-center" style="font-size: 14px;"><?php echo money_format('%= (#6.2n', $costo_transferencia_usuario); ?></td>
             <td class="text-center" style="font-size: 14px;"><?php echo money_format('%= (#6.2n', $costo_edenred); ?></td>
             <td class="text-center" style="font-size: 14px;"><?php echo money_format('%= (#6.2n', $edenrednegativo); ?></td>
-            <td class="text-center" style="font-size: 18px;"><strong><?php echo money_format('%= (#6.2n', $balanceedenred); ?></strong> </td>
+<!--            <td class="text-center" style="font-size: 18px;"><strong><?php echo money_format('%= (#6.2n', $balanceedenred); ?></strong> </td>-->
         </tr>
 
     </table>

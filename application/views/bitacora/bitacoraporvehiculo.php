@@ -41,7 +41,7 @@ if ($querydatosvehiculo->num_rows() > 0) {
         <th>Fecha Servicio</th>
         <th>kilometraje</th>
         <th>Observaciones</th>
-        <th></th>
+       
     </tr>';
 
         foreach ($query->result() as $row) {
@@ -52,7 +52,7 @@ if ($querydatosvehiculo->num_rows() > 0) {
             echo '<td>' . $row->kilometraje_actual . '</td>';
             echo '<td>' . $row->observaciones . '</td>';
             //   echo '<td><a href="' . base_url() . 'index.php/sesion/usuario/' . $row->id . '">' . $row->nombre . ' ' . $row->ap_paterno . '</a></td>';
-            echo '<td><a href="' . base_url() . 'index.php/vehiculos/editarservicio/' . $row->idservicio_vehicular . '"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></td>';
+    //        echo '<td><a href="' . base_url() . 'index.php/vehiculos/editarservicio/' . $row->idservicio_vehicular . '"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></td>';
             echo '</tr>';
             $costo = $costo + $row->costo_neto;
         }

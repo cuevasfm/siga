@@ -51,7 +51,7 @@
 </script>
 <br>
 <br>
-<div class="col-md-12">
+<div class="col-lg-12">
 
     <h2>Información general del vehiculo</h2>
     <?php
@@ -82,47 +82,98 @@
         }
     }
     ?>
-
-    <dl class="dl-horizontal ">
-        <dt>Placas</dt>
-        <dd><?php echo $placas; ?></dd>
-        <dt>Marca</dt>
-        <dd><?php echo $marcavehiculo; ?></dd>
-        <dt>Modelo</dt>
-        <dd><?php echo $modelo; ?></dd>
-        <dt>Serie</dt>
-        <dd><?php echo $serie; ?></dd>
-        <dt>Año</dt>
-        <dd><?php echo $anio; ?></dd>
-        <dt>Agente de seguro</dt>
-        <dd><?php echo $agente_seguro; ?></dd>
-        <dt>Aseguradora</dt>
-        <dd><?php echo $emp_seguro; ?></dd>
-        <dt>Vencimiento de seguro</dt>
-        <dd><?php echo $vencimiento_seguro; ?></dd>
-        <dt>Tarjeta de circulación</dt>
-        <dd><?php echo $tarjeta_circulacion; ?></dd>
-        <dt>Usuario actual</dt>
-        <dd><?php echo $usuario_actual; ?></dd>
-        <dt>Proxima verificación</dt>
-        <dd><?php echo $proxima_verificacion; ?></dd>
-    </dl>
     <div class="col-lg-12">
         <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Datos del vehículo</h3>
+            </div>
             <div class="panel-body">
-                <a class="btn btn-default" href="<?php echo base_url() . 'bitacora/vehiculo/41/'; ?>" role="button">Bitácora</a>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarVehiculo">
-                    Editar vehículo
-                </button>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deBaja">
-                    Dar de Baja
-                </button>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reporteSiniestro">
-                    Reporte de siniestro
-                </button>
+                <div class="col-sm-4">
+                 <ul class="list-group">
+                    <li class="list-group-item">Placas: <?php echo $placas; ?></li>
+                    <li class="list-group-item">Marca: <?php echo $marcavehiculo; ?></li>
+                    <li class="list-group-item">Modelo: <?php echo $modelo; ?></li>
+                    <li class="list-group-item">Serie: <?php echo $serie; ?></li>
+                    <li class="list-group-item">Año: <?php echo $anio; ?></li>
+                </ul>   
+                </div>
+                <div class="col-sm-4">
+                 <ul class="list-group">
+                    <li class="list-group-item">Agente de seguro: <?php echo $agente_seguro; ?></li>
+                    <li class="list-group-item">Aseguradora: <?php echo $emp_seguro; ?></li>
+                    <li class="list-group-item">Vencimiento seguro: <?php echo $vencimiento_seguro; ?></li>
+                    <li class="list-group-item">Tarjeta de circulación: <?php echo $tarjeta_circulacion; ?></li>
+                    <li class="list-group-item">Usuario actual: <?php echo $usuario_actual; ?></li>
+                </ul>   
+                </div>
+                <div class="col-sm-4">
+                 <ul class="list-group">
+                    <li class="list-group-item">Próxima verificación: <?php echo $proxima_verificacion; ?></li>
+                    <li class="list-group-item">Estatus: Activo</li>
+                    <li class="list-group-item">Poliza de seguro: no existe</li>
+                    <li class="list-group-item"> </li>
+                    <li class="list-group-item"> </li>
+                </ul>   
+                </div>
+                
             </div>
         </div>
     </div>
+    <!--    <div class="col-md-6">
+            <div class="panel panel-default">
+                <dl class="dl-horizontal ">
+                    <dt>Placas</dt>
+                    <dd><?php echo $placas; ?></dd>
+                    <dt>Marca</dt>
+                    <dd><?php echo $marcavehiculo; ?></dd>
+                    <dt>Modelo</dt>
+                    <dd><?php echo $modelo; ?></dd>
+                    <dt>Serie</dt>
+                    <dd><?php echo $serie; ?></dd>
+                    <dt>Año</dt>
+                    <dd><?php echo $anio; ?></dd>
+                    <dt>Agente de seguro</dt>
+                    <dd><?php echo $agente_seguro; ?></dd>
+                    <dt>Aseguradora</dt>
+                    <dd><?php echo $emp_seguro; ?></dd>
+                    <dt>Vencimiento de seguro</dt>
+                    <dd><?php echo $vencimiento_seguro; ?></dd>
+                    <dt>Tarjeta de circulación</dt>
+                    <dd><?php echo $tarjeta_circulacion; ?></dd>
+                    <dt>Usuario actual</dt>
+                    <dd><?php echo $usuario_actual; ?></dd>
+                    <dt>Proxima verificación</dt>
+                    <dd><?php echo $proxima_verificacion; ?></dd>
+                    <dt>Estatus</dt>
+                    <dd><?php echo $proxima_verificacion; ?></dd>
+                    <dt>Poliza de seguro</dt>
+                    <dd><?php echo $proxima_verificacion; ?></dd>
+                </dl> 
+            </div>
+        </div>-->
+
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <a class="btn btn-default btn-lg btn-block" href="<?php echo base_url() . 'index.php/bitacora/vehiculo/' . $id . '/'; ?>" role="button">
+                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Bitácora
+                </a>
+                <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#editarVehiculo">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar vehículo
+                </button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#polizaSeguro">
+                    <span class="glyphicon glyphicon-open-file" aria-hidden="true"></span> Poliza de seguro
+                </button>
+                <button type="button" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#deBaja">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Dar de Baja
+                </button>
+                <button type="button" class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#reporteSiniestro">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Reporte de siniestro
+                </button>                
+            </div>
+        </div>
+    </div>
+
 </div>
 <div class="col-lg-12">
     <br>    <h2>Fotografias del auto</h2>
@@ -157,22 +208,6 @@
 
 
 
-</div>
-<div class="col-lg-12">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <a class="btn btn-default" href="#" role="button">Bitácora</a>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarVehiculo">
-                Editar vehículo
-            </button>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deBaja">
-                Dar de Baja
-            </button>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reporteSiniestro">
-                Reporte de siniestro
-            </button>
-        </div>
-    </div>
 </div>
 
 <!-- Modal -->
@@ -321,7 +356,6 @@
                                 <option>Vendido</option>
                                 <option>Siniestro</option>
                                 <option>Robo</option>
-                                <option>Otro</option>
                             </select>
                         </div>
                     </div>
@@ -374,6 +408,35 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <button type="submit" class="btn btn-default">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="polizaSeguro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Reporte de siniestro</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Detalle de dar de baja:</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" type="file" required accept="application/pdf">
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="col-sm-offset-4 col-sm-8">
                             <button type="submit" class="btn btn-default">Guardar</button>

@@ -20,7 +20,7 @@ $this->load->helper('url');
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="col-xs-12">
-                    <img src="<?php echo base_url(); ?>media/imagotipoin.png" alt="" class="img-rounded img-responsive">
+                    <img src="<?php echo base_url(); ?>media/wall/logoinca1.gif" alt="" class="img-rounded img-responsive">
                     <br>
                 </div>
 

@@ -35,7 +35,7 @@ echo '<h3>Solicitudes vehiculares pendientes de autorización <a href="http://mi
 //$query = $this->db->query('select * from vehiculos join marcasvehiculos on vehiculos.marca = marcasvehiculos.id JOIN usuarios ON vehiculos.usuario_actual = usuarios.id');
 //$query = $this->db->query('select * from servicio_vehicular where fecha_servicio >= "' . $dia1 . '" and fecha_servicio <= "' . $dia2 . '"');
 //$query = $this->db->query('select * from servicio_vehicular where `estatus_autorizacion` = "0" and `fecha_servicio` =  "' . $fechasql . '" ORDER BY idservicio_vehicular DESC ');
-$query = $this->db->query('SELECT servicio_vehicular.idvehiculo, idservicio_vehicular, idsolicitante, costo_neto, observaciones, fecha_servicio, placas, nombre, ap_paterno, servicio_vehicular.mediode_pago, vehiculos.usuario_actual FROM `servicio_vehicular` join vehiculos on servicio_vehicular.idvehiculo = vehiculos.idvehiculo join usuarios on servicio_vehicular.idsolicitante = usuarios.id where servicio_vehicular.estatus_autorizacion = "0" and servicio_vehicular.fecha_servicio = "' . $fechasql . '" ORDER BY  idservicio_vehicular DESC');
+$query = $this->db->query('SELECT servicio_vehicular.idvehiculo, idservicio_vehicular, idsolicitante, costo_neto, observaciones, fecha_servicio, placas, nombre, ap_paterno, servicio_vehicular.mediode_pago, vehiculos.usuario_actual, servicio_vehicular.kilometraje_actual FROM `servicio_vehicular` join vehiculos on servicio_vehicular.idvehiculo = vehiculos.idvehiculo join usuarios on servicio_vehicular.idsolicitante = usuarios.id where servicio_vehicular.estatus_autorizacion = "0" and servicio_vehicular.fecha_servicio = "' . $fechasql . '" ORDER BY  idservicio_vehicular DESC');
 if ($query->num_rows() > 0) {
 
     echo '<form method="post" action="' . base_url() . 'index.php/vehiculos/autorizarservicio">';
@@ -47,6 +47,7 @@ if ($query->num_rows() > 0) {
         <th>Usuario</th>
         <th>Costo</th>
         <th>Servicio/Reparación</th>
+        <th>Km</th>
         <th>Medio de pago</th> 
         <th>Autorizar</th>        
         <th>Editar</th>
@@ -80,6 +81,7 @@ if ($query->num_rows() > 0) {
         echo '<td>' . $usuarionombre . ' ' . $usuarioap_paterno . '</td>';
         echo '<td>' . money_format('%= (#6.2n', $row2->costo_neto) . '</td>';
         echo '<td>' . mb_strtoupper($row2->observaciones) . '</td>';
+        echo '<td>' . $row2->kilometraje_actual . '</td>';
         echo '<td>' . $mediodepago . '</td>';
         echo '<td><input type = "checkbox" name = "check[' . $row2->idservicio_vehicular . ']" value = "' . $row2->idservicio_vehicular . '" ' . '></td>';
         echo '<td><a href = "' . base_url() . 'index.php/vehiculos/editarservicio/' . $row2->idservicio_vehicular . ' "><button type = "button" class = "btn btn-default" aria-label = "Left Align"><span class = "glyphicon glyphicon-pencil" aria-hidden = "true"></span></button></a>';

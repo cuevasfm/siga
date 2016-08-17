@@ -61,9 +61,10 @@ class Imprimir extends CI_Controller {
                     'fecha1' => $fecha1,
                     'fecha2' => $fecha2
                 );
-                $this->load->view('impresion/header');
+                $this->load->view('html/header');
+                $this->load->view('html/menuadmin');
                 $this->load->view('impresion/impbitacorafechas',$fechas);
-                $this->load->view('impresion/footer');
+                $this->load->view('html/footer');
                 break;
             default :
                 echo 'Acceso Restringido';

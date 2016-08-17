@@ -14,7 +14,7 @@
 
     </div>
     <div class="col-xs-4" >
-        <strong>Servicios realizados entre: <?php echo $fecha1; ?> y <?php echo $fecha2; ?> </strong>
+       
     </div>
 </div>
 <br><br><br>  
@@ -25,7 +25,7 @@ setlocale(LC_MONETARY, 'es_MX');
 $costo = 0;
 if ($query->num_rows() > 0) {
     echo '<br><table class="table table-hover" style="font-size: 12px">
-        <caption class="text-center" style="color: black; font-size: 14px;"><strong>BUSQUEDA DE LOS SERVICIOS / REPARACIONES</strong></caption>
+        <caption class="text-center" style="color: black; font-size: 14px;"><strong>BUSQUEDA DE LOS SERVICIOS / REPARACIONES ENTRE LAS FECHAS ' . $fecha1 . ' Y ' . $fecha2 . '  </strong></caption>
     <tr>
         <th class="text-center" style="width: 7%; background-color: #770b4b !important; color: white !important;">ID</th>
         <th class="text-center" style="width: 11%; background-color: #770b4b !important; color: white !important;">PLACAS</th>
@@ -46,11 +46,11 @@ if ($query->num_rows() > 0) {
             $mediodepago = 'SPEI usuario';
         }
         echo '<tr class="text-center">';
-        echo '<td class="text-center">' . $row->idservicio_vehicular . '</td>';
-        echo '<td class="text-center">' . $row->placas . '</td>';
-        echo '<td class="text-center">' . money_format('%= (#7.2n', $row->costo_neto) . '</td>';
+        echo '<td>' . $row->idservicio_vehicular . '</td>';
+        echo '<td>' . $row->placas . '</td>';
+        echo '<td>' . money_format('%= (#7.2n', $row->costo_neto) . '</td>';
         echo '<td>' . mb_strtoupper($row->observaciones, 'UTF-8') . '</td>';
-        echo '<td class="text-center">' . $mediodepago . '</td>';
+        echo '<td>' . $mediodepago . '</td>';
         echo '</tr>';
         $costo = $costo + $row->costo_neto;
     }

@@ -89,33 +89,33 @@
             </div>
             <div class="panel-body">
                 <div class="col-sm-4">
-                 <ul class="list-group">
-                    <li class="list-group-item">Placas: <?php echo $placas; ?></li>
-                    <li class="list-group-item">Marca: <?php echo $marcavehiculo; ?></li>
-                    <li class="list-group-item">Modelo: <?php echo $modelo; ?></li>
-                    <li class="list-group-item">Serie: <?php echo $serie; ?></li>
-                    <li class="list-group-item">Año: <?php echo $anio; ?></li>
-                </ul>   
+                    <ul class="list-group">
+                        <li class="list-group-item">Placas: <?php echo $placas; ?></li>
+                        <li class="list-group-item">Marca: <?php echo $marcavehiculo; ?></li>
+                        <li class="list-group-item">Modelo: <?php echo $modelo; ?></li>
+                        <li class="list-group-item">Serie: <?php echo $serie; ?></li>
+                        <li class="list-group-item">Año: <?php echo $anio; ?></li>
+                    </ul>   
                 </div>
                 <div class="col-sm-4">
-                 <ul class="list-group">
-                    <li class="list-group-item">Agente de seguro: <?php echo $agente_seguro; ?></li>
-                    <li class="list-group-item">Aseguradora: <?php echo $emp_seguro; ?></li>
-                    <li class="list-group-item">Vencimiento seguro: <?php echo $vencimiento_seguro; ?></li>
-                    <li class="list-group-item">Tarjeta de circulación: <?php echo $tarjeta_circulacion; ?></li>
-                    <li class="list-group-item">Usuario actual: <?php echo $usuario_actual; ?></li>
-                </ul>   
+                    <ul class="list-group">
+                        <li class="list-group-item">Agente de seguro: <?php echo $agente_seguro; ?></li>
+                        <li class="list-group-item">Aseguradora: <?php echo $emp_seguro; ?></li>
+                        <li class="list-group-item">Vencimiento seguro: <?php echo $vencimiento_seguro; ?></li>
+                        <li class="list-group-item">Tarjeta de circulación: <?php echo $tarjeta_circulacion; ?></li>
+                        <li class="list-group-item">Usuario actual: <?php echo $usuario_actual; ?></li>
+                    </ul>   
                 </div>
                 <div class="col-sm-4">
-                 <ul class="list-group">
-                    <li class="list-group-item">Próxima verificación: <?php echo $proxima_verificacion; ?></li>
-                    <li class="list-group-item">Estatus: Activo</li>
-                    <li class="list-group-item">Poliza de seguro: no existe</li>
-                    <li class="list-group-item"> </li>
-                    <li class="list-group-item"> </li>
-                </ul>   
+                    <ul class="list-group">
+                        <li class="list-group-item">Próxima verificación: <?php echo $proxima_verificacion; ?></li>
+                        <li class="list-group-item">Estatus: Activo</li>
+                        <li class="list-group-item">Poliza de seguro: no existe</li>
+                        <li class="list-group-item">Factura: </li>
+                        <li class="list-group-item">Precio: </li>
+                    </ul>   
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -164,8 +164,8 @@
                 <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#polizaSeguro">
                     <span class="glyphicon glyphicon-open-file" aria-hidden="true"></span> Poliza de seguro
                 </button>
-                <button type="button" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#deBaja">
-                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Dar de Baja
+                <button type="button" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#vendido">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Vehículo vendido
                 </button>
                 <button type="button" class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#reporteSiniestro">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Reporte de siniestro
@@ -226,7 +226,7 @@
                             <input type="text" class="form-control" name="placas" value="<?php echo $placas; ?>">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group"> 
                         <label class="col-sm-4 control-label">Marca</label>
                         <div class="col-sm-8">
                             <select name="marca" class="form-control" required="">
@@ -340,29 +340,43 @@
     </div>
 </div>
 <!--Dar de baja el vehiculo-->
-<div class="modal fade" id="deBaja" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="vendido" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Dar de baja</h4>
+                <h4 class="modal-title" id="myModalLabel">Vehículo vendido</h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label class="col-sm-4 control-label">Estatus:</label>
-                        <div class="col-sm-8">
-                            <select class="form-control">
-                                <option>Vendido</option>
-                                <option>Siniestro</option>
-                                <option>Robo</option>
-                            </select>
+                        <label class="col-sm-4 control-label">Fecha:</label>
+                        <div class="col-sm-8"> 
+                            <input type="text" class="form-control" required name="fecha">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label">Detalle de dar de baja:</label>
+                        <label class="col-sm-4 control-label">Comprador:</label>
+                        <div class="col-sm-8"> 
+                            <input type="text" class="form-control" required name="fecha">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Importe de compra:</label>
+                        <div class="col-sm-8"> 
+                            <input type="text" class="form-control" required name="fecha">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Detalles de venta:</label>
                         <div class="col-sm-8">
                             <textarea class="form-control" rows="2" maxlength="50"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Contrato de venta:</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" type="file" required accept="application/pdf">
                         </div>
                     </div>
 
@@ -373,6 +387,7 @@
                     </div>
                 </form>
             </div>
+            <div class="alert alert-warning" role="alert"><strong>¡Advertencia! </strong>Al finalizar el reporte esta aceptando dar de baja la unidad</div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
             </div>
@@ -391,23 +406,55 @@
             <div class="modal-body">
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label class="col-sm-4 control-label">Estatus:</label>
+                        <label class="col-sm-4 control-label">Tipo:</label>
                         <div class="col-sm-8">
                             <select class="form-control">
-                                <option>Vendido</option>
                                 <option>Siniestro</option>
                                 <option>Robo</option>
-                                <option>Otro</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label">Detalle de dar de baja:</label>
+                        <label class="col-sm-4 control-label">Fecha:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" required name="fecha">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Numero de reporte aseguradora:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" required name="reporte_aseguradora">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Fecha:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Observaciones:</label>
                         <div class="col-sm-8">
                             <textarea class="form-control" rows="2" maxlength="250"></textarea>
                         </div>
                     </div>
-
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Dar de baja el vehículo:</label>
+                        <div class="col-sm-8">
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> Si
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="0" checked> No
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Reporte de siniestro:</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" type="file" required accept="application/pdf">
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="col-sm-offset-4 col-sm-8">
                             <button type="submit" class="btn btn-default">Guardar</button>

@@ -1,44 +1,7 @@
-###################
-What is CodeIgniter
-###################
 
-Aplicación para la administración de la flotilla vehicular 
+  
 
-*******************
-Release Information
-*******************
+## SIGA 
 
 
-
-**************************
-Changelog and New Features
-**************************
-
-
-
-*******************
-Server Requirements
-*******************
-
-
-
-************
-Installation
-************
-
-
-*******
-License
-*******
-
-
-
-*********
-Resources
-*********
-
-
-
-***************
-Acknowledgement
-***************
+Proyecto realizado para el seguimiento, asignación a usuarios, mantenimiento, costos de flotilla de vehículos
